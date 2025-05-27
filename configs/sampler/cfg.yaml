@@ -1,0 +1,10 @@
+name: cfg
+
+parameters:
+  cfg_scale: 3.0
+  n_steps: 32
+
+context_parameters:
+    # audio exp
+    audioldm2-large:
+      n_steps: 200

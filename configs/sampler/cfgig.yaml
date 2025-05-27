@@ -1,0 +1,16 @@
+name: cfgig
+
+parameters:
+  n_steps: 32
+  cfg_scale: 2.0
+  init_nsteps: 12
+  sigma_gibbs: 1.0
+  n_gibbs: 2
+  cfg_scale_init: 1.0  # by default, no cfg in the init
+
+
+context_parameters:
+  model:
+    # audio exp
+    audioldm2-large:
+      n_steps: 200

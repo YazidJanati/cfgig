@@ -1,0 +1,10 @@
+name: cfgpp 
+
+parameters:
+  cfg_scale: 0.3
+  n_steps: 32
+
+context_parameters:
+  model:
+    audioldm2-large:
+      n_steps: 200

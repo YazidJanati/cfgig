@@ -1,0 +1,40 @@
+defaults:
+  - sampler: cfgig
+  - base_sampler: heun
+
+# check to see the supported models
+model: edm2-img512-xxl-guid-fid
+
+save_dir: null
+save_dir_run: ${save_dir}/out-images/${sampler.name}-${base_sampler.name}/
+
+seed: 1234
+n_samples: 2
+device: "cuda:0"
+
+ctx:
+  - 291   # lion
+  - 84    # peacok
+  - 967   # espresso
+  - 957   # pomegranate
+
+# # NOTE: comment the ctx above and then uncomment what is below
+# # for an text-to-image example stable diffusion
+# ctx:
+#   - "The bear standing in water is shaking it's fur. "
+
+
+eval:
+  seed: 11
+  batch_size: 300
+  path_generated_data:
+  metrics:
+    - "fid"
+    - "fd_dinov2"
+  prdc:
+    latents_type:
+      - dinov2
+      - inceptionv3
+      - vgg16
+    n_neighbors: 3
+    n_reps: 1

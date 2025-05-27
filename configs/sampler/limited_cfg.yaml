@@ -1,0 +1,13 @@
+name: limited_cfg
+
+parameters:
+  n_steps: 32
+  cfg_scale: 3.0
+  sigma_lo: 0.16
+  sigma_hi: 3.0
+
+
+context_parameters:
+    # audio exp
+    audioldm2-large:
+      n_steps: 200

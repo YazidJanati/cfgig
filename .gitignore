@@ -1,0 +1,19 @@
+**/.DS_STORE
+
+# python3 cache and build
+*.pyc
+*.egg-info
+__pycache__
+__cache__
+build/
+
+gen_audios
+experiments_tta
+
+# hydra
+outputs
+out-audios
+out-images
+
+# python3 virtual environment
+venv

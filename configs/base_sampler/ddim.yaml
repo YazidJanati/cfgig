@@ -1,0 +1,21 @@
+name: ddim
+
+parameters:
+  rho: 7
+  sigma_min: 2e-3
+  sigma_max: 80.0
+
+context_parameters:
+  model:
+    # these are equivalent sigma_max and min of the model
+    # rho doesn't intervene in the sigma scheduler
+    audioldm2-large:
+      sigma_min: 0.0388
+      sigma_max: 83.8225
+      rho: null
+
+    sdxl1.0:
+      sigma_min: 0.0292
+      sigma_max: 14.6172
+      rho: null
+    # ---

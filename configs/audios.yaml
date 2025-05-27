@@ -1,0 +1,31 @@
+defaults:
+  - sampler: cfgig
+  - base_sampler: ddim
+
+model: "audioldm2-large"
+dataset: "audio_caps"
+
+save_dir: null
+save_dir_run: ${save_dir}/out-audios/${sampler.name}-${base_sampler.name}/
+
+duration_s: 10  # duration of the generated audio
+sampling_rate: 16000
+device: "cuda:0"
+ctx:
+  - A male voice and then drilling
+  - A person burps as people laugh
+
+
+eval:
+  seed: 10
+  # here 3 samples are generated and the best among them is chosen
+  select_best_audio: True
+  n_samples: 3
+  path_ref_data:         # put here the path to the reference audios
+  path_generated_data:   # put here the path to the generated audios
+  # ---
+  save_dir: null
+  audio_caps:
+    backbone: "cnn14"
+    same_name: True
+    limit_num: 1000
